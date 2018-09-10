@@ -7,7 +7,7 @@
 <!-- <%= link_to 'Edit', edit_category_path(@category) %> | -->
 <button type="button" class="btn btn-outline-primary"><%= link_to 'Back', categories_path %></button>
 
-<%= form_with(model:[@category,@product]) do |form| %>
+<%= form_with(model:[@category, @product]) do |form| %>
 <%= form.hidden_field :category_id, value: @category.id %>
 
   <div class="field">
