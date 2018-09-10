@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Categories</h1>
+
+<table>
+
+
+  <tbody>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+          <% @categories.each do |category| %>
+          <tr>
+          <th><h6><%= link_to category.name, category %></h6></th>
+          <th><% category.products.each do |pro| %>
+            <%= pro.count %>
+            <% end %>
+          </th>
+
+          <th><button type="button" class="btn btn-outline-info"><%= link_to 'Edit', edit_category_path(category) %></button></th>
+          <th><button type="button" class="btn btn-outline-warning"><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></button></th>
+          <% end %>
+        </tr>
+      </tbody>
+
+    <!-- </table>
+    <ul>
+
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>-->
+</table>
+
+<br>
+
+<!-- <%= link_to 'New Category', new_category_path %> -->
