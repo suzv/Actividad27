@@ -11,8 +11,6 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @product = Product.new
-    @product.save
-
   end
 
   # GET /categories/new
@@ -79,8 +77,8 @@ class CategoriesController < ApplicationController
       params.require(:category).permit(:name)
     end
 
-    # //////
+  
     def product_params
-      params.require(:product).permit(:name, :price)
+      params.require(:product).permit(:name, :price, :category_id)
     end
 end

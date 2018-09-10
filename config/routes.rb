@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   resources :categories do
     resources :products, only: [:create, :destroy]
   end
-  # resources :categories
-  # get 'categories/new', do: cater
-  # get 'categories/show'
+  
    root 'categories#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

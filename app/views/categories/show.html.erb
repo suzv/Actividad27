@@ -8,7 +8,7 @@
 <button type="button" class="btn btn-outline-primary"><%= link_to 'Back', categories_path %></button>
 
 <%= form_with(model:[@category,@product]) do |form| %>
-<!-- <%= form.hidden_field :category_id, value: @category.id %> -->
+<%= form.hidden_field :category_id, value: @category.id %>
 
   <div class="field">
     <%= form.label :name %>
@@ -28,6 +28,7 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Price</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -36,7 +37,7 @@
       <tr>
       <th><%= pro.name %></th>
       <th><%= pro.price %></th>
-      <%= link_to 'X', category_product_path(@category,product), method: :delete %>
+      <th><%= link_to 'X', category_product_path(@category, pro), method: :delete %></th>
 
       <% end %>
     </tr>
